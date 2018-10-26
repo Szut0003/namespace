@@ -51,12 +51,12 @@ var SZUT0003 = {
         boxes.appendChild(newSquare);
 
         newSquare.addEventListener("mouseout", function () {
-            newSquare.className.toggle("highlight");
-            newSquare.removeAttribute("style");
+            e.target.className.toggle("highlight");
+            e.target.removeAttribute("style");
         });
 
         newSquare.addEventListener("mouseover", function () {
-            newSquare.target.className.toggle("highlight");
+            e.target.className.toggle("highlight");
         });
 
         newSquare.addEventListener("click", function () {
