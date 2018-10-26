@@ -48,23 +48,25 @@ var SZUT0003 = {
         newSquare.textContent = "szut0003";
         let boxes = document.getElementById("boxes");
         boxes.appendChild(newSquare);
-
-        newSquare.addEventListener("mouseout", function () {
-            newSquare.className.toggle("highlight");
-            newSquare.removeAttribute("style");
-        });
+        
         newSquare.addEventListener("click", function () {
             newSquare.style.borderColor = "hsl(176, 40%, 50%)";
             newSquare.style.backgroundColor = "hsl(357, 52%, 50%)";
         });
+
         newSquare.addEventListener("mouseover", function () {
-            newSquare.className.toggle("highlight");
+
+            newSquare.classList.toggle("highlight");
+
         });
 
+        newSquare.addEventListener("mouseout", function () {
 
+            newSquare.classList.toggle("highlight");
+            newSquare.removeAttribute('style');
+        });
 
     }
 };
-
 
 
