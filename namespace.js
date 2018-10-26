@@ -38,7 +38,7 @@ function mouseOut(e) {
 
 */
 
-//document.addEventListener("DOMContentLoaded", init);
+
 
 
 var SZUT0003 = {
@@ -46,35 +46,25 @@ var SZUT0003 = {
         let newSquare = document.createElement("div");
         newSquare.className = "box";
         newSquare.textContent = "szut0003";
-
         let boxes = document.getElementById("boxes");
         boxes.appendChild(newSquare);
 
         newSquare.addEventListener("mouseout", function () {
-            e.target.className.toggle("highlight");
-            e.target.removeAttribute("style");
+            newSquare.className.toggle("highlight");
+            newSquare.removeAttribute("style");
         });
-
-        newSquare.addEventListener("mouseover", function () {
-            e.target.className.toggle("highlight");
-        });
-
         newSquare.addEventListener("click", function () {
             newSquare.style.borderColor = "hsl(176, 40%, 50%)";
             newSquare.style.backgroundColor = "hsl(357, 52%, 50%)";
         });
-    }
+        newSquare.addEventListener("mouseover", function () {
+            newSquare.className.toggle("highlight");
+        });
 
+
+
+    }
 };
 
 
 
-
-//function mouseClick {
-//    this.style.borderColor = "hsl(176, 40%, 50%)";
-//    this.style.backgroundColor = "hsl(357, 52%, 50%)";
-//}
-//
-//function mouseOver(e) {
-//    e.target.className.toggle("highlight");
-//}
