@@ -38,7 +38,9 @@ function mouseOut(e) {
 
 */
 
-document.addEventListener("DOMContentLoaded", init);
+//document.addEventListener("DOMContentLoaded", init);
+
+
 var SZUT0003 = {
     init: function () {
         let newSquare = document.createElement("div");
@@ -46,25 +48,33 @@ var SZUT0003 = {
         newSquare.textContent = "szut0003";
 
         let boxes = document.getElementById("boxes");
-        boxes.appendChild(newBox);
+        boxes.appendChild(newSquare);
 
-        newBox.addEventListener("mouseout", mouseOut);
-        newBox.addEventListener("mouseover", mouseOver);
-        newBox.addEventListener("click", mouseClick);
+        newSquare.addEventListener("mouseout", function () {
+            newSquare.className.toggle("highlight");
+            newSquare.removeAttribute("style");
+        });
+
+        newSquare.addEventListener("mouseover", function () {
+            newSquare.target.className.toggle("highlight");
+        });
+
+        newSquare.addEventListener("click", function () {
+            newSquare.style.borderColor = "hsl(176, 40%, 50%)";
+            newSquare.style.backgroundColor = "hsl(357, 52%, 50%)";
+        });
     }
 
-}
+};
 
-function mouseOut(e) {
-    e.target.className.toggle("highlight");
-    e.target.removeAttribute("style");
-}
 
-function mouseClick {
-    this.style.borderColor = "hsl(176, 40%, 50%)";
-    this.style.backgroundColor = "hsl(357, 52%, 50%)";
-}
 
-function mouseOver(e) {
-    e.target.className.toggle("highlight");
-}
+
+//function mouseClick {
+//    this.style.borderColor = "hsl(176, 40%, 50%)";
+//    this.style.backgroundColor = "hsl(357, 52%, 50%)";
+//}
+//
+//function mouseOver(e) {
+//    e.target.className.toggle("highlight");
+//}
